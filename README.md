@@ -1,68 +1,61 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Navedex - Desafio de Frontend.
 
-## Available Scripts
+O sistema consiste em uma web app para visualização e criação dos navers, possuindo informações como: nomes, idades, cargos, tempo de empresa e projetos que participou.
 
-In the project directory, you can run:
+* Usar React JS.
+* Consumir dados de uma API.
+* Usar Figma para guiar o desenvolvimento.
+* Tela de login.
+* Listagem  de navers cadastrados.
+* Visualização detalhada no naver.
+* Registro e edição de navers.
 
-### `yarn start`
+Requisitos:
+- git 2.20.1
+- node v10.15.2
+- yarn 1.21.1
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para executar o aplicativo localmente:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```bash
+$ git clone https://github.com/engmsilva/nave.git
+$ cd nave
+$ yarn install
+```
+Crie um arquivo .env na raiz do projeto e adicione a linha abaixo e salve:
 
-### `yarn test`
+```bash
+REACT_APP_URL_API=https://navedex-api.herokuapp.com/v1
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Agora os seguintes comandos para executar a aplicação:
 
-### `yarn build`
+```bash
+$ yarn start
+$ open http://localhost:3000
+```
+Credenciais:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+e-mail: eng.msilva@yahoo.com.br
+senha: 12345678
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Para executar a versão minificada do aplicativo localmente:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Instalação do servidor Node
 
-### `yarn eject`
+```bash
+$ yarn global add serve
+```
+Exportar caminho de instalação do servidor para variável de ambiente do sistema operacional.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+$ export PATH="$PATH:$(yarn global bin)" // exemplo usado no Ubuntu
+```
+Execute o servidor
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```bash
+$ serve -s build
+$ open http://localhost:5000
+```

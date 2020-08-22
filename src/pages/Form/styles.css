@@ -1,0 +1,18 @@
+.layout-form-nav {
+  justify-content: flex-start;
+  height: 64px;
+}
+
+.layout-form-bt-return {
+  font-size: 16px;
+  color: #212121;
+}
+
+.layout-form-title {
+  font-size: 24px;
+  color: #212121;
+}
+
+.layout-form-bt-submit {
+  min-width: 176px;
+}
