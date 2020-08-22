@@ -29,11 +29,11 @@ export default function ModalDetail(props) {
         if(days < 1){
           return 'Meu primeiro dia'
         }
-        return `${days} dia${days > 1 && 's'}`
+        return `${days} dia${days > 1 ? 's' : ''}`
       }
       return `${months} ${months > 1 ? 'meses' : 'mês'}`
     }
-    return `${age} ano${age > 1 && 's'}`
+    return `${age} ano${age > 1 ? 's' : ''}`
   }
 
   function handleOk() {
