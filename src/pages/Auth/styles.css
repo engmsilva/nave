@@ -1,5 +1,3 @@
-/* @import url('../../styles/root.css'); */
-
 .content_login {
   min-height: 100vh;
   background: #FFFFFF;
@@ -9,11 +7,6 @@
   justify-content: center;
   align-items: center;
   padding: 40px 0px 62px 0px;
-}
-
-.language-login {
-  /* justify-content: flex-end; */
-  /* width: 100%; */
 }
 
 .logoSignup {

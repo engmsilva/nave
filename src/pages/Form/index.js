@@ -123,7 +123,7 @@ function handleSubmit(params) {
     }
   }
 
-  return true && (
+  return (
     <>
     <Row>
       <Col span={12} offset={6}>
@@ -154,7 +154,7 @@ function handleSubmit(params) {
                 },
                 {
                   min: 3,
-                  message: "A nome deve possuir no mínimo 3 caracteres."
+                  message: "O nome deve possuir no mínimo 3 caracteres."
                 },
               ]}
             >
