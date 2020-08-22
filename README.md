@@ -2,20 +2,22 @@
 
 O sistema consiste em uma web app para visualização e criação dos navers, possuindo informações como: nomes, idades, cargos, tempo de empresa e projetos que participou.
 
-* Usar React JS.
-* Consumir dados de uma API.
-* Usar Figma para guiar o desenvolvimento.
-* Tela de login.
-* Listagem  de navers cadastrados.
-* Visualização detalhada no naver.
-* Registro e edição de navers.
+Os seguintes desafios foram propostos:
+
+* Usar React JS;
+* Consumir dados de uma API;
+* Usar Figma para guiar o desenvolvimento;
+* Tela de login;
+* Listagem  de navers cadastrados;
+* Visualização detalhada no naver;
+* Registro, edição e exclusão de navers.
 
 Requisitos:
 - git 2.20.1
 - node v10.15.2
 - yarn 1.21.1
 
-Para executar o aplicativo localmente:
+### Para executar o aplicativo localmente:
 
 ```bash
 $ git clone https://github.com/engmsilva/nave.git
@@ -28,7 +30,7 @@ Crie um arquivo .env na raiz do projeto e adicione a linha abaixo e salve:
 REACT_APP_URL_API=https://navedex-api.herokuapp.com/v1
 ```
 
-Agora os seguintes comandos para executar a aplicação:
+Execute o comando abaixo dentro do diretório do projeto:
 
 ```bash
 $ yarn start
@@ -41,7 +43,7 @@ e-mail: eng.msilva@yahoo.com.br
 senha: 12345678
 ```
 
-Para executar a versão minificada do aplicativo localmente:
+### Para executar a versão minificada do aplicativo localmente:
 
 Instalação do servidor Node
 
