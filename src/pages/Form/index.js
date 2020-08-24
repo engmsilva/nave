@@ -1,6 +1,7 @@
 import React from 'react';
 import { ContextAPI } from '../../ContextAPI/context';
 import useCustomHooks from '../../ContextAPI/useCustomHooks';
+import { getEditTemp } from '../Auth/localStorage';
 import { navigate } from 'hookrouter';
 import {
         Row,
@@ -35,14 +36,15 @@ export default function Forms(props) {
   const title = mode === "register" ? "Adicionar Naver" : "Editar Naver";
   const message = mode === "register" ? "criado" : "atualizado";
 
-  function success() {
+  const success = () => {
     Modal.success({
       title: `Naver ${message}`,
       content: `Naver ${message} com sucesso.`,
+      onOk() { navigate('/navers')},
     });
   }
 
-  function momentToString(values){
+  const momentToString = (values) => {
     Object.keys(values).forEach(key=>{
       if (moment.isMoment(values[key])){
         values[key] = moment(values[key]).format(dateFormat);
@@ -51,7 +53,7 @@ export default function Forms(props) {
     return values
   }
 
-  function stringToMoment(values){
+  const stringToMoment = (values) => {
     let formatString;
     Object.keys(values).forEach(key=>{
       if (regex.test(values[key])){
@@ -86,7 +88,7 @@ export default function Forms(props) {
       });
   }
 
-function handleSubmit(params) {
+const handleSubmit = (params) => {
   momentToString(params);
   switch (mode) {
     case 'register':
@@ -99,19 +101,17 @@ function handleSubmit(params) {
       break;
   }
 }
-
-
   React.useEffect(()=>{
     if(mode === 'register'){
       formNaver.resetFields();
     }
     if(mode === 'edit'){
       formNaver.resetFields();
-      setFieldsValue(stringToMoment(state.naverSelect));
+      setFieldsValue(stringToMoment(getEditTemp()));
     }
   },[formNaver, mode, setFieldsValue, state.naverSelect]);
 
-  function onResetError(field) {
+  const onResetError = (field) => {
     if (getFieldError(field)) {
       setFields([
         {

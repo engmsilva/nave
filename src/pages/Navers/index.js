@@ -1,6 +1,7 @@
 import React from 'react';
 import { ContextAPI } from '../../ContextAPI/context';
 import useCustomHooks from '../../ContextAPI/useCustomHooks';
+import { postEditTemp } from '../Auth/localStorage';
 import {
         Row,
         Button,
@@ -30,7 +31,7 @@ export default function Navers() {
   const { getAPI, deleteAPI } = useCustomHooks();
   const getFetch = React.useRef(getData);
 
-  function success() {
+  const success = () => {
     Modal.success({
       title: 'Naver excluído',
       content: 'Naver excluído com sucesso.',
@@ -45,15 +46,16 @@ export default function Navers() {
     });
   }
 
-  function handleEdit(id) {
-    const naver = state.dataNavers.filter(item => item.id === id)[0];
-    dispatch({ type: "setState", payload: { nested: "naverSelect", value: naver } });
+  const handleEdit = (id) => {
+    const naver = state.dataNavers.find(item => item.id === id);
+    postEditTemp(naver);
+    // dispatch({ type: "setState", payload: { nested: "naverSelect", value: naver } });
     dispatch({ type: "setState", payload: { nested: "showModal", value: false } });
     navigate('/edit');
   }
 
-  function handleDetail(id) {
-    const naver = state.dataNavers.filter(item => item.id === id)[0];
+  const handleDetail = (id) => {
+    const naver = state.dataNavers.find(item => item.id === id);
     dispatch({ type: "setState", payload: { nested: "naverSelect", value: naver } });
     dispatch({ type: "setState", payload: { nested: "showModal", value: true } });
   }
@@ -66,7 +68,7 @@ export default function Navers() {
     });
   }
 
-  function handleDelete(id) {
+  const handleDelete = (id) => {
     confirm({
       title: 'Excluir Naver',
       icon: <ExclamationCircleOutlined />,
@@ -102,7 +104,7 @@ export default function Navers() {
                     <img
                         className="photo-navers"
                         alt="cover" src={item.url}
-                        onClick={() => handleDetail(item.id)} 
+                        onClick={() => handleDetail(item.id)}
                     />
                   }
                 >

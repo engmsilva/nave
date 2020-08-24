@@ -19,7 +19,7 @@ export default function ModalDetail(props) {
   const [state, dispatch] = React.useContext(ContextAPI);
   const { handleDelete, handleEdit } = props;
 
-  function momentToBirthday(date){
+  const momentToBirthday = (date) => {
     const formatString = moment.utc(date).format('YYYY-MM-DD');
     const age = moment().diff(formatString, 'years');
     if(age < 1){
@@ -36,11 +36,11 @@ export default function ModalDetail(props) {
     return `${age} ano${age > 1 ? 's' : ''}`
   }
 
-  function handleOk() {
+  const handleOk = () => {
     dispatch({ type: "utils", payload: { nested: 'showModalProject', value: true } });
   };
 
-  function handleCancel() {
+  const  handleCancel = () => {
     dispatch({ type: "setState", payload: {nested: "showModal", value: false } });
   };
 
